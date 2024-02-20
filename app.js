@@ -6,6 +6,7 @@ require("./db/db");
 const loginRouter = require("./routes/login");
 const registerRouter = require("./routes/register");
 const customerRouter = require("./routes/newcustomer");
+const getCustomerRouter = require("./routes/getCustomer");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/newcustomer", customerRouter);
+app.use("/customer", getCustomerRouter);
 
 app.get("/", (req, res) => {
   res.send("hello world");
