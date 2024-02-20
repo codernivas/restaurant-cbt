@@ -38,8 +38,9 @@
 const express = require("express");
 const router = express.Router();
 const customerCollection = require("../model/customerModel");
+const authMiddle=require("../helper/auth")
 
-router.post("/", async (req, res) => {
+router.post("/",authMiddle, async (req, res) => {
     try {
         const { mobileNo, bills } = req.body;
 

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const userCollection = require("../model/userModel");
-// const authMiddle=require("../helper/auth")
+const authMiddle=require("../helper/auth")
 
 router.post("/", async (req, res) => {
   try {
